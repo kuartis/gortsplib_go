@@ -1,8 +1,8 @@
 package gortsplib
 
 import (
-	"github.com/pion/rtcp"
-	"github.com/pion/rtp/v2"
+	rtcp "github.com/kuartis/rtcp_go"
+	"github.com/kuartis/rtp"
 
 	"github.com/kuartis/gortsplib_go/pkg/base"
 )

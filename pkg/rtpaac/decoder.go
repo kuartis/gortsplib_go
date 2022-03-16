@@ -6,9 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pion/rtp/v2"
-
 	"github.com/kuartis/gortsplib_go/pkg/rtptimedec"
+	"github.com/kuartis/rtp"
 )
 
 // ErrMorePacketsNeeded is returned when more packets are needed.

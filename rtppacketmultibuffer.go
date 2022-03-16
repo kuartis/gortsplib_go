@@ -1,8 +1,6 @@
 package gortsplib
 
-import (
-	"github.com/pion/rtp/v2"
-)
+import "github.com/kuartis/rtp"
 
 type rtpPacketMultiBuffer struct {
 	count   uint64

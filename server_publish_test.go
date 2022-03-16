@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pion/rtcp"
-	"github.com/pion/rtp/v2"
+	rtcp "github.com/kuartis/rtcp_go"
+	"github.com/kuartis/rtp"
 	psdp "github.com/pion/sdp/v3"
 	"github.com/stretchr/testify/require"
 

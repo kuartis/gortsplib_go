@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pion/rtcp"
-	"github.com/pion/rtp/v2"
+	rtcp "github.com/kuartis/rtcp_go"
+	"github.com/kuartis/rtp"
 )
 
 func randUint32() uint32 {

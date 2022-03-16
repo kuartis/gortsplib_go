@@ -78,8 +78,8 @@ Related projects
 
 * https://github.com/aler9/rtsp-simple-server
 * https://github.com/pion/sdp (SDP library used internally)
-* https://github.com/pion/rtcp (RTCP library used internally)
-* https://github.com/pion/rtp (RTP library used internally)
+* https://rtcp "github.com/kuartis/rtcp_go" (RTCP library used internally)
+* https://"github.com/kuartis/rtp" (RTP library used internally)
 
 IETF Standards
 

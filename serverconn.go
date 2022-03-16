@@ -11,11 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pion/rtcp"
-
 	"github.com/kuartis/gortsplib_go/pkg/base"
 	"github.com/kuartis/gortsplib_go/pkg/liberrors"
 	"github.com/kuartis/gortsplib_go/pkg/multibuffer"
+	rtcp "github.com/kuartis/rtcp_go"
 )
 
 func getSessionID(header base.Header) string {

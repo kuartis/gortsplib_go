@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pion/rtcp"
-	"github.com/pion/rtp/v2"
+	rtcp "github.com/kuartis/rtcp_go"
+	"github.com/kuartis/rtp"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/net/ipv4"
 

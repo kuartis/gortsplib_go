@@ -8,10 +8,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/pion/rtcp"
 	"golang.org/x/net/ipv4"
 
 	"github.com/kuartis/gortsplib_go/pkg/multibuffer"
+	rtcp "github.com/kuartis/rtcp_go"
 )
 
 type clientData struct {

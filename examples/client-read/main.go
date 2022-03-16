@@ -4,8 +4,8 @@ import (
 	"log"
 
 	gortsplib "github.com/kuartis/gortsplib_go"
-	"github.com/pion/rtcp"
-	"github.com/pion/rtp/v2"
+	rtcp "github.com/kuartis/rtcp_go"
+	"github.com/kuartis/rtp"
 )
 
 // This example shows how to connect to a RTSP server

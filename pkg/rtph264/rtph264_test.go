@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pion/rtp/v2"
+	"github.com/kuartis/rtp"
 	"github.com/stretchr/testify/require"
 )
 

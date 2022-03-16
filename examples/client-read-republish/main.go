@@ -5,7 +5,7 @@ import (
 
 	gortsplib "github.com/kuartis/gortsplib_go"
 	"github.com/kuartis/gortsplib_go/pkg/base"
-	"github.com/pion/rtp/v2"
+	"github.com/kuartis/rtp"
 )
 
 // This example shows how to
