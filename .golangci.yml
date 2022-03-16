@@ -1,0 +1,24 @@
+
+linters:
+  enable:
+  - asciicheck
+  - bodyclose
+  - dupl
+  - exportloopref
+  - gochecknoinits
+  - gocritic
+  - gofmt
+  - gofumpt
+  - misspell
+  - lll
+  - prealloc
+  - predeclared
+  - revive
+  - unconvert
+  - wastedassign
+  - whitespace
+  disable:
+  - errcheck
+
+issues:
+  exclude-use-default: false
