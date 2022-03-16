@@ -1,4 +1,4 @@
-module github.com/aler9/gortsplib
+module github.com/kuartis/gortsplib_go
 
 go 1.15
 
