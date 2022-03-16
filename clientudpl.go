@@ -10,7 +10,7 @@ import (
 	"github.com/pion/rtcp"
 	"golang.org/x/net/ipv4"
 
-	"github.com/aler9/gortsplib/pkg/multibuffer"
+	"github.com/kuartis/gortsplib_go/pkg/multibuffer"
 )
 
 func randUint32() uint32 {

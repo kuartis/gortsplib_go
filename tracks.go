@@ -6,7 +6,7 @@ import (
 
 	psdp "github.com/pion/sdp/v3"
 
-	"github.com/aler9/gortsplib/pkg/sdp"
+	"github.com/kuartis/gortsplib_go/pkg/sdp"
 )
 
 // Tracks is a list of tracks.

@@ -4,7 +4,7 @@ import (
 	"github.com/pion/rtcp"
 	"github.com/pion/rtp/v2"
 
-	"github.com/aler9/gortsplib/pkg/base"
+	"github.com/kuartis/gortsplib_go/pkg/base"
 )
 
 // ServerHandler is the interface implemented by all the server handlers.

@@ -8,8 +8,8 @@ import (
 
 	psdp "github.com/pion/sdp/v3"
 
-	"github.com/aler9/gortsplib/pkg/aac"
-	"github.com/aler9/gortsplib/pkg/base"
+	"github.com/kuartis/gortsplib_go/pkg/aac"
+	"github.com/kuartis/gortsplib_go/pkg/base"
 )
 
 // TrackAAC is an AAC track.

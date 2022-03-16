@@ -8,8 +8,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/aler9/gortsplib/pkg/h264"
 	"github.com/asticode/go-astits"
+	"github.com/kuartis/gortsplib_go/pkg/h264"
 )
 
 // mpegtsEncoder allows to encode H264 NALUs into MPEG-TS.

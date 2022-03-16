@@ -8,7 +8,7 @@ import (
 	"github.com/pion/rtcp"
 	"github.com/pion/rtp/v2"
 
-	"github.com/aler9/gortsplib/pkg/liberrors"
+	"github.com/kuartis/gortsplib_go/pkg/liberrors"
 )
 
 type trackInfo struct {

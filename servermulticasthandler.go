@@ -3,7 +3,7 @@ package gortsplib
 import (
 	"net"
 
-	"github.com/aler9/gortsplib/pkg/ringbuffer"
+	"github.com/kuartis/gortsplib_go/pkg/ringbuffer"
 )
 
 type trackTypePayload struct {

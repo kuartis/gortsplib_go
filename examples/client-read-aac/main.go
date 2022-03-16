@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 
-	"github.com/aler9/gortsplib"
-	"github.com/aler9/gortsplib/pkg/base"
-	"github.com/aler9/gortsplib/pkg/rtpaac"
+	gortsplib "github.com/kuartis/gortsplib_go"
+	"github.com/kuartis/gortsplib_go/pkg/base"
+	"github.com/kuartis/gortsplib_go/pkg/rtpaac"
 	"github.com/pion/rtp/v2"
 )
 

@@ -5,8 +5,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/aler9/gortsplib"
-	"github.com/aler9/gortsplib/pkg/rtph264"
+	gortsplib "github.com/kuartis/gortsplib_go"
+	"github.com/kuartis/gortsplib_go/pkg/rtph264"
 	"github.com/pion/rtp/v2"
 )
 

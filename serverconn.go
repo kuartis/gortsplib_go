@@ -13,9 +13,9 @@ import (
 
 	"github.com/pion/rtcp"
 
-	"github.com/aler9/gortsplib/pkg/base"
-	"github.com/aler9/gortsplib/pkg/liberrors"
-	"github.com/aler9/gortsplib/pkg/multibuffer"
+	"github.com/kuartis/gortsplib_go/pkg/base"
+	"github.com/kuartis/gortsplib_go/pkg/liberrors"
+	"github.com/kuartis/gortsplib_go/pkg/multibuffer"
 )
 
 func getSessionID(header base.Header) string {
