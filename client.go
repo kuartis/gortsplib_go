@@ -135,7 +135,7 @@ type Client struct {
 	// called when a RTP packet arrives.
 	OnPacketRTP func(int, *rtp.Packet)
 	// called when a RTCP packet arrives.
-	OnPacketRTCP func(int, rtcp.Packet)
+	OnPacketRTCP func(int, uint64, uint32, rtcp.Packet)
 
 	//
 	// RTSP parameters
@@ -258,7 +258,7 @@ func (c *Client) Start(scheme string, host string) error {
 		}
 	}
 	if c.OnPacketRTCP == nil {
-		c.OnPacketRTCP = func(trackID int, pkt rtcp.Packet) {
+		c.OnPacketRTCP = func(trackID int, ntpTimestamp uint64, packetCount uint32, pkt rtcp.Packet) {
 		}
 	}
 
@@ -772,14 +772,14 @@ func (c *Client) runReader() {
 						c.tracks[trackID].rtcpReceiver.ProcessPacketRTP(now, pkt)
 						c.OnPacketRTP(trackID, pkt)
 					} else {
-						packets, err := rtcp.Unmarshal(payload)
+						packets, _, _, err := rtcp.Unmarshal(payload)
 						if err != nil {
 							return
 						}
 
 						for _, pkt := range packets {
 							c.tracks[trackID].rtcpReceiver.ProcessPacketRTCP(now, pkt)
-							c.OnPacketRTCP(trackID, pkt)
+							c.OnPacketRTCP(trackID, 0, 0, pkt)
 						}
 					}
 				}
@@ -791,13 +791,13 @@ func (c *Client) runReader() {
 
 				processFunc = func(trackID int, isRTP bool, payload []byte) {
 					if !isRTP {
-						packets, err := rtcp.Unmarshal(payload)
+						packets, _, _, err := rtcp.Unmarshal(payload)
 						if err != nil {
 							return
 						}
 
 						for _, pkt := range packets {
-							c.OnPacketRTCP(trackID, pkt)
+							c.OnPacketRTCP(trackID, 0, 0, pkt)
 						}
 					}
 				}

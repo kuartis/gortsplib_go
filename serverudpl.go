@@ -221,7 +221,7 @@ func (u *serverUDPListener) processRTP(clientData *clientData, payload []byte) {
 }
 
 func (u *serverUDPListener) processRTCP(clientData *clientData, payload []byte) {
-	packets, err := rtcp.Unmarshal(payload)
+	packets, _, _, err := rtcp.Unmarshal(payload)
 	if err != nil {
 		return
 	}

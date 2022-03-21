@@ -2,6 +2,7 @@ package gortsplib
 
 import (
 	"crypto/rand"
+	"log"
 	"net"
 	"strconv"
 	"sync/atomic"
@@ -192,25 +193,33 @@ func (u *clientUDPListener) processPlayRTP(now time.Time, payload []byte) {
 }
 
 func (u *clientUDPListener) processPlayRTCP(now time.Time, payload []byte) {
-	packets, err := rtcp.Unmarshal(payload)
-	if err != nil {
+	log.Println("Here")
+	packets, ntpTimestamp, packetCount, err := rtcp.Unmarshal(payload)
+
+	log.Println(ntpTimestamp)
+	log.Println(packetCount)
+
+	if err != nil && ntpTimestamp == 0 && packetCount == 0 {
+		log.Println("Finished")
 		return
+	} else if err != nil && ntpTimestamp != 0 && packetCount != 0 {
+		u.c.OnPacketRTCP(u.trackID, ntpTimestamp, packetCount, nil)
 	}
 
 	for _, pkt := range packets {
 		u.c.tracks[u.trackID].rtcpReceiver.ProcessPacketRTCP(now, pkt)
-		u.c.OnPacketRTCP(u.trackID, pkt)
+		u.c.OnPacketRTCP(u.trackID, ntpTimestamp, packetCount, pkt)
 	}
 }
 
 func (u *clientUDPListener) processRecordRTCP(now time.Time, payload []byte) {
-	packets, err := rtcp.Unmarshal(payload)
+	packets, ntpTimestamp, packetCount, err := rtcp.Unmarshal(payload)
 	if err != nil {
 		return
 	}
 
 	for _, pkt := range packets {
-		u.c.OnPacketRTCP(u.trackID, pkt)
+		u.c.OnPacketRTCP(u.trackID, ntpTimestamp, packetCount, pkt)
 	}
 }
 

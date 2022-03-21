@@ -227,7 +227,7 @@ func (sc *ServerConn) readFuncTCP(readRequest chan readReq) error {
 
 		processFunc = func(trackID int, isRTP bool, payload []byte) {
 			if !isRTP {
-				packets, err := rtcp.Unmarshal(payload)
+				packets, _, _, err := rtcp.Unmarshal(payload)
 				if err != nil {
 					return
 				}
@@ -267,7 +267,7 @@ func (sc *ServerConn) readFuncTCP(readRequest chan readReq) error {
 					})
 				}
 			} else {
-				packets, err := rtcp.Unmarshal(payload)
+				packets, _, _, err := rtcp.Unmarshal(payload)
 				if err != nil {
 					return
 				}
