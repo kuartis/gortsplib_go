@@ -193,11 +193,9 @@ func (u *clientUDPListener) processPlayRTP(now time.Time, payload []byte) {
 }
 
 func (u *clientUDPListener) processPlayRTCP(now time.Time, payload []byte) {
-	log.Println("Here")
 	packets, ntpTimestamp, packetCount, err := rtcp.Unmarshal(payload)
 
 	if ntpTimestamp == 0 && packetCount == 0 {
-		log.Println("Finished")
 		return
 	} else if ntpTimestamp != 0 && packetCount != 0 {
 		u.c.OnPacketRTCP(u.trackID, ntpTimestamp, packetCount, nil)
